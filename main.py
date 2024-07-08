@@ -6,9 +6,12 @@ from PyQt5 import QtCore
 
 class LoginUi(QMainWindow):
     def __init__(self):
+
+        # This portion loads the ui folder as python code using the pytq uic module
         super(LoginUi, self).__init__()
-        ui_path = os.path.join(os.path.dirname(__file__), "LoginForm.ui")
-        loadUi(ui_path, self)  # Use absolute path to ensure the UI file is found
+        ui_path = os.path.join(os.path.dirname(__file__), "UI_Files", "LoginForm.ui")
+        loadUi(ui_path, self)  # Use relative path to ensure the UI file is found
+        #####
 
         # Make the window frameless and transparent
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
